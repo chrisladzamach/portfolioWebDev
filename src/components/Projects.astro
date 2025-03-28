@@ -1,8 +1,6 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
-import { fetchProjects, type Project } from "../utils/projects.ts";
-
-const projects: Project[] = await fetchProjects("chrisladzamach");
+import { projects } from "../data";
 ---
 
 <section id="projects" class="min-h-screen flex items-center justify-center bg-slate-50">

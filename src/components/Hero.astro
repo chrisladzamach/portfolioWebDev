@@ -1,4 +1,8 @@
 ---
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
+import MailIcon from "../icons/MailIcon.astro";
+
 ---
 
 <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 pt-16">
@@ -7,11 +11,26 @@
       Hi, I'm <span class="text-primary">Chris. S. Zam</span>
     </h1>
     <p class="text-xl text-gray-600 mb-8">Full Stack Web Developer</p>
-    <a
+    <!-- <a
       href="#projects"
-      class="inline-block bg-primary hover:bg-secondary text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
+      class="inline-block bg-blue-400 hover:bg-blue-600 text-gray-100 font-semibold px-8 py-3 rounded-lg hover:text-blue-200 transition duration-300"
     >
       View My Work
-    </a>
+    </a> -->
+
+    <nav class="flex gap-x-3 items-center">
+      <a class="flex gap-x-1 items-center hover:scale-105 transition duration-200" href="https://github.com/chrisladzamach">
+        <GitHubIcon  class="size-6"/>
+        GitHub
+      </a>
+      <a class="flex gap-x-1 items-center hover:scale-105 transition duration-200" href="https://www.linkedin.com/in/CsZa/">
+        <LinkedInIcon class="size-6" />
+        LinkedIn
+      </a>
+      <a class="flex gap-x-1 items-center hover:scale-105 transition duration-200" href="mailto: software.project.zero@gmail.com">
+        <MailIcon class="size-8" />
+        Email
+      </a>
+    </nav>
   </div>
 </section>
