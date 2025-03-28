@@ -7,31 +7,29 @@ const menuItems = [
 ];
 ---
 
-<header class="fixed w-full bg-white/80 backdrop-blur-sm z-50 shadow-sm">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <span class="flex items-center gap-x-4">
-        <a href="#home" class="text-2xl font-bold text-primary">Portfolio</a>
-        <img 
-          class="w-10 h-10 rounded-full cursor-pointer" 
-          src="https://www.github.com/chrisladzamach.png" 
-          alt="Chris. Zam. avatar" 
-          title="Chris. Zam. avatar">
-      </span>
-      <div class="hidden md:block">
-        <div class="flex items-center space-x-8">
-          {
-            menuItems.map(({ href, text }) => (
-              <a
-                href={href}
-                class="text-gray-700 font-semibold hover:text-primary hover:scale-105 hover:font-bold hover:text-cyan-900 transition duration-200 active:font-bold"
-              >
-                {text}
-              </a>
-            ))
-          }
-        </div>
+<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="flex items-center justify-between h-16">
+    <span class="flex items-center gap-x-4">
+      <a href="#home" class="text-2xl font-bold text-primary">Portfolio</a>
+      <img 
+        class="w-10 h-10 rounded-full cursor-pointer" 
+        src="https://www.github.com/chrisladzamach.png" 
+        alt="Chris. Zam. avatar" 
+        title="Chris. Zam. avatar">
+    </span>
+    <div class="hidden md:block">
+      <div class="flex items-center space-x-8">
+        {
+          menuItems.map(({ href, text }) => (
+            <a
+              href={href}
+              class="text-gray-700 font-semibold hover:text-primary hover:scale-105 hover:font-bold hover:text-cyan-900 transition duration-200 active:font-bold"
+            >
+              {text}
+            </a>
+          ))
+        }
       </div>
     </div>
-  </nav>
-</header>
+  </div>
+</nav>

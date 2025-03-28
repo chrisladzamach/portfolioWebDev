@@ -1,2 +1,43 @@
 ---
+const programmingLanguages = ['HTML', 'CSS', 'Tailwind CSS', 'JavaScript', 'TypeScript', 'Node.js', 'Astro', 'React', 'MySQL', 'MongoDB' ]
 ---
+
+<section id="about" class="min-h-screen flex items-center justify-center bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <p class="text-lg text-gray-600 mb-2">
+          Software Analyst and Developer interested in creating effective and efficient solutions.
+        </p>
+        <p class="text-lg text-gray-600 mb-2">
+          I have experience in JavaScript, React.js, Python, and backend technologies such as Node.js and Express.
+        </p>
+        <p class="text-lg text-gray-600 mb-2">
+          My knowledge of SQL and NoSQL databases, such as MySQL and MongoDB, allows me to manage data optimally. 
+        </p>
+        <div class="space-y-4">
+          <h3 class="text-2xl font-semibold">Skills</h3>
+          <div class="flex flex-wrap gap-3">
+            {
+              programmingLanguages.map((skill) => (
+                <span class="bg-blue-100 text-primary px-4 py-2 rounded-full 
+                hover:scale-105 hover:text-blue-50 hover:bg-blue-300 transition duration-200 cursor-pointer">
+                  {skill}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-200 h-80 rounded-lg">
+        <img 
+          src="https://www.github.com/chrisladzamach.png" 
+          alt="Chris. Zam. avatar" 
+          class="h-full w-full object-cover rounded-lg"
+          title="Chris. Zam. avatar"
+        >
+      </div>
+    </div>
+  </div>
+</section>
