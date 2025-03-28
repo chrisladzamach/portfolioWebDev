@@ -1,22 +1,8 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
+import { fetchProjects, type Project } from "../utils/projects.ts";
 
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-}
-
-const response = await fetch("https://api.github.com/users/chrisladzamach/repos");
-const data = await response.json();
-
-const projects: Project[] = data.map((repo: any) => ({
-  title: repo.name,
-  description: repo.description || "No description available.",
-  image: `https://picsum.photos/800/600?random=${repo.id}`, // Random image for now
-  technologies: repo.language ? [repo.language] : ["Unknown"],
-}));
+const projects: Project[] = await fetchProjects("chrisladzamach");
 ---
 
 <section id="projects" class="min-h-screen flex items-center justify-center bg-slate-50">
