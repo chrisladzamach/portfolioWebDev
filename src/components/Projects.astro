@@ -1,2 +1,31 @@
 ---
+import ProjectCard from "./ProjectCard.astro";
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+}
+
+const response = await fetch("https://api.github.com/users/chrisladzamach/repos");
+const data = await response.json();
+
+const projects: Project[] = data.map((repo: any) => ({
+  title: repo.name,
+  description: repo.description || "No description available.",
+  image: `https://picsum.photos/800/600?random=${repo.id}`, // Random image for now
+  technologies: repo.language ? [repo.language] : ["Unknown"],
+}));
 ---
+
+<section id="projects" class="min-h-screen flex items-center justify-center bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  </div>
+</section>
